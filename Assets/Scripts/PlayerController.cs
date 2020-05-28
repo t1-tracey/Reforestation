@@ -20,13 +20,15 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        Debug.Log("fixed update");
+        MovePlayer();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //MovePlayer();
     }
 
     private void MovePlayer()
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
         float axisZ = XCI.GetAxis(XboxAxis.LeftStickY, controller);
 
         Vector3 movement = new Vector3(axisX, 0, axisZ);
+        Debug.Log(movement*movementSpeed);
 
         rigidBody.AddForce(movement * movementSpeed);
 
