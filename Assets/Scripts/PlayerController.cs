@@ -7,9 +7,11 @@ using XboxCtrlrInput;
 public class PlayerController : MonoBehaviour
 {
 
+    // Store player rigidbody and Xbox controller
     public Rigidbody rigidBody;
     public XboxController controller;
 
+    // How fast the player can move
     public float movementSpeed = 60;
     public float maxSpeed = 5;
 
@@ -35,6 +37,8 @@ public class PlayerController : MonoBehaviour
         RotatePlayer();
     }
 
+
+    // Translate the player camera along the X and Z axes
     private void MovePlayer()
     {
         float axisX = XCI.GetAxis(XboxAxis.LeftStickX, controller);
