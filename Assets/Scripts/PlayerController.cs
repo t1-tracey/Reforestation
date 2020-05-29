@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed = 60;
     public float maxSpeed = 5;
 
+    // Store rotation parameters
     public Vector3 previousRotationDirection = Vector3.forward;
     public float turnSpeed = 60;
 
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    // Orbit camera around player crosshair
     private void RotatePlayer()
     {
         float rotateAxisX = XCI.GetAxis(XboxAxis.RightStickX, controller);
