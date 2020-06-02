@@ -15,4 +15,7 @@ public class Rain : MonoBehaviour
     {
         
     }
+
+    // React when button is pushed while rain is selected
+    // Send rain message to plants
 }

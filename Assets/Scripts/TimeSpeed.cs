@@ -15,4 +15,8 @@ public class TimeSpeed : MonoBehaviour
     {
         
     }
+
+    // React when button is pushed while time speed is selected
+    // Send timeSpeed message to plants
+    // React when UI summoning time speed is selected
 }

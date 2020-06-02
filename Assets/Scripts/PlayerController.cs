@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(axisX, 0, axisZ);
         //Debug.Log(movement*movementSpeed);
 
+        // rigidBody.velocity = movement * movementSpeed;
         rigidBody.AddForce(movement * movementSpeed);
 
         // Ensure player can't go faster than the max speed
@@ -74,7 +75,12 @@ public class PlayerController : MonoBehaviour
 
         directionVector = directionVector.normalized;
         previousRotationDirection = directionVector;
+
         //rigidBody.AddTorque(directionVector * turnSpeed * Time.deltaTime);
+
+        // rigidBody.rotation = Quaternion.Euler(directionVector * turnSpeed);
         rigidBody.AddTorque(directionVector * turnSpeed);
     }
+
+    // 
 }

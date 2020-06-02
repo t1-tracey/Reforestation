@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantDead : MonoBehaviour
+public class PlantDead : Plant
 {
     // Start is called before the first frame update
     void Start()
