@@ -40,7 +40,7 @@ public class PlantAlive : Plant
     // Check distance between plant and crosshair
     private void CheckDistanceToCrosshair()
     {
-
+        Vector3.Distance(this.transform.position, transform.position);
     }
 
     // Called when time speed up is used on plant
