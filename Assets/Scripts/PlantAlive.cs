@@ -25,27 +25,4 @@ public class PlantAlive : Plant
 
     }
 
-    // Called when plant watered
-    private void SetWatered()
-    {
-
-    }
-
-    // Called when plant has received sunlight
-    private void SetReceivedSunlight()
-    {
-
-    }
-
-    // Check distance between plant and crosshair
-    private void CheckDistanceToCrosshair()
-    {
-        //Vector3.Distance(this.transform.position, transform.position);
-    }
-
-    // Called when time speed up is used on plant
-    private void SpeedUpTime()
-    {
-
-    }
 }

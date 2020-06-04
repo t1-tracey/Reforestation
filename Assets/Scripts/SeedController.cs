@@ -17,5 +17,5 @@ public class SeedController : MonoBehaviour
     }
 
     // Spawn seed, in location of player crosshair (randomised, to distance of radius)
-    // 
+    // Check distance to crosshair
 }
