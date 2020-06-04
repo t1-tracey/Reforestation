@@ -14,6 +14,14 @@ public class Plant : MonoBehaviour
     public bool isWatered;
     public bool hasReceivedSunlight;
 
+    // Add mesh / prefab properties
+    public GameObject seed;
+    public GameObject sapling;
+    public GameObject smallTree;
+    public GameObject bigTree;
+    public GameObject treeLog;
+    public GameObject treeDead;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -190,6 +198,8 @@ public class Plant : MonoBehaviour
         SetCanRespondToTime(false);
 
         //TODO: set mesh / prefab
+
+
     }
 
     public void SetPlantStageToSapling()
