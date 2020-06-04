@@ -161,6 +161,18 @@ public class Plant : MonoBehaviour
         canRespondToTime = canRespond;
     }
 
+    public bool CheckIfCanRespondToTime()
+    {
+        if (GetIsWatered() && GetHasReceivedSunlight())
+        {
+            SetCanRespondToTime(true);
+            return true;
+        }
+        SetCanRespondToTime(false);
+        return false;
+
+    }
+
 
     // Called when plant change state
     private void ChangeStage()
@@ -248,7 +260,12 @@ public class Plant : MonoBehaviour
         {
             SetIsWatered(true);
             // Optional message for water animations, particle effects etc.
+
+            // update can respond to time if needed
+            CheckIfCanRespondToTime();
         }
+
+
     }
 
     // Called when sunlight is used on plant
@@ -257,38 +274,38 @@ public class Plant : MonoBehaviour
         if (GetCanRespondToSunlight())
         {
             SetHasReceivedSunlight(true);
+            // Optional message for sunlight animations, particle effects etc.
+
+            // update can respond to time if needed
+            CheckIfCanRespondToTime();
+
         }
     }
 
     // Called when time speed up is used on plant
     public void SpeedUpTime()
     {
-        if (IsPlantSeed())
+        if (GetCanRespondToTime())
         {
-            if (GetIsWatered() && GetHasReceivedSunlight())
+            if (IsPlantSeed())
             {
                 SetPlantStageToSapling();
             }
-        }
-        else if (IsPlantSapling())
-        {
-            if (GetIsWatered() && GetHasReceivedSunlight())
+            else if (IsPlantSapling())
             {
                 SetPlantStageToSmallTree();
             }
-        }
-        else if (IsPlantSmallTree())
-        {
-            if (GetIsWatered() && GetHasReceivedSunlight())
+            else if (IsPlantSmallTree())
             {
                 SetPlantStageToBigTree();
             }
+            else if (IsTreeLog() || IsTreeStump())
+            {
+                // Decay and disappear
+                DestroyPlant();
+            }
         }
-        else if (IsTreeLog() || IsTreeStump())
-        {
-            // Decay and disappear
-            DestroyPlant();
-        }
+
     }
 
     // Destroy plant
@@ -296,8 +313,6 @@ public class Plant : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
-
-    // Seed
 
 
 }
