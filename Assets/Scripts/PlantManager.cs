@@ -30,8 +30,11 @@ public class PlantManager : MonoBehaviour
 
         Plant plant = new Plant();
 
-        // place new plant in position of old plant
+        // place new plant in position of old plant, quaternion.identity
         plant.transform.position = oldPlant.transform.position;
+
+        oldPlant.gameObject.SetActive(false);
+        Instantiate(plant, oldPlant.transform.position, Quaternion.identity);
 
         // Instanstiate
         // Disable old plant

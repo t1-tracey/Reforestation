@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeedController : MonoBehaviour
+public class ViewController : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,4 @@ public class SeedController : MonoBehaviour
     {
         
     }
-
-    // Spawn seed, in location of player crosshair (randomised, to distance of radius)
-    // Check distance to crosshair
 }
