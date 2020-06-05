@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlantManager : MonoBehaviour
 {
 
-    // Add mesh / prefab properties
+    // Store prefabs for plants
     public GameObject seed;
     public GameObject sapling;
     public GameObject smallTree;
@@ -23,5 +23,38 @@ public class PlantManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ChangePlantStage(Plant oldPlant, PlantStage newPlantStage, bool canRespondToWater, bool canRespondToSunlight, bool canRespondToTime)
+    {
+
+        Plant plant = new Plant();
+
+        // place new plant in position of old plant
+        plant.transform.position = oldPlant.transform.position;
+
+        // Instanstiate
+        // Disable old plant
+
+        plant.SetPlantStage(newPlantStage);
+
+        plant.SetCanRespondToWater(canRespondToWater);
+        plant.SetCanRespondToSunlight(canRespondToSunlight);
+        plant.SetCanRespondToTime(canRespondToTime);
+
+        oldPlant.DestroyPlant();
+    }
+
+    // Spawn seed, in location of player crosshair (randomised, to distance of radius)
+
+    //TODO: Check distance between plant and crosshair
+    public void CheckDistanceToCrosshair()
+    {
+        // Vector3.Distance(plant.transform.position, player.transform.position)
+    }
+
+    public void SpawnPlant()
+    {
+
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Plant : MonoBehaviour
 {
 
-    public PlantStage currentPlantStage;
+    public PlantStage plantStage;
 
     public bool canRespondToWater;
     public bool canRespondToSunlight;
@@ -31,7 +31,7 @@ public class Plant : MonoBehaviour
     // Getters
     public PlantStage GetPlantStage()
     {
-        return currentPlantStage;
+        return plantStage;
     }
 
     public bool IsPlantSeed()
@@ -100,6 +100,11 @@ public class Plant : MonoBehaviour
             return false;
         }
         return false;
+    }
+
+    public void SetPlantStage(PlantStage newPlantStage)
+    {
+        plantStage = newPlantStage;
     }
 
     public bool GetCanRespondToWater()
@@ -175,16 +180,9 @@ public class Plant : MonoBehaviour
 
     }
 
-
-    // Called when plant change state
-    private void ChangeStage()
-    {
-
-    }
-
     public void SetPlantStageToSeed()
     {
-        currentPlantStage = PlantStage.Seed;
+        SetPlantStage(PlantStage.Seed);
 
         // See table in GDD
         SetCanRespondToWater(true);
@@ -198,7 +196,7 @@ public class Plant : MonoBehaviour
 
     public void SetPlantStageToSapling()
     {
-        currentPlantStage = PlantStage.Sapling;
+        SetPlantStage(PlantStage.Sapling);
 
         SetCanRespondToWater(true);
         SetCanRespondToSunlight(true);
@@ -209,7 +207,7 @@ public class Plant : MonoBehaviour
 
     public void SetPlantStageToSmallTree()
     {
-        currentPlantStage = PlantStage.SmallTree;
+        SetPlantStage(PlantStage.SmallTree);
 
         SetCanRespondToWater(true);
         SetCanRespondToSunlight(true);
@@ -220,7 +218,7 @@ public class Plant : MonoBehaviour
 
     public void SetPlantStageToBigTree()
     {
-        currentPlantStage = PlantStage.BigTree;
+        SetPlantStage(PlantStage.BigTree);
 
         SetCanRespondToWater(false);
         SetCanRespondToSunlight(false);
@@ -231,7 +229,7 @@ public class Plant : MonoBehaviour
 
     public void SetTreeStageToTreeLog()
     {
-        currentPlantStage = PlantStage.TreeLog;
+        SetPlantStage(PlantStage.TreeLog);
 
         SetCanRespondToWater(false);
         SetCanRespondToSunlight(false);
@@ -242,7 +240,7 @@ public class Plant : MonoBehaviour
 
     public void SetTreeStageToTreeStump()
     {
-        currentPlantStage = PlantStage.TreeStump;
+        SetPlantStage(PlantStage.TreeStump);
 
         SetCanRespondToWater(false);
         SetCanRespondToSunlight(false);
