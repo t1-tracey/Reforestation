@@ -14,13 +14,7 @@ public class Plant : MonoBehaviour
     public bool isWatered;
     public bool hasReceivedSunlight;
 
-    // Add mesh / prefab properties
-    public GameObject seed;
-    public GameObject sapling;
-    public GameObject smallTree;
-    public GameObject bigTree;
-    public GameObject treeLog;
-    public GameObject treeDead;
+    // public mesh
 
     // Start is called before the first frame update
     void Start()
@@ -257,7 +251,7 @@ public class Plant : MonoBehaviour
         //TODO: set mesh / prefab
     }
 
-    // Check distance between plant and crosshair
+    //TODO: Check distance between plant and crosshair
     public void CheckDistanceToCrosshair()
     {
         // Vector3.Distance(plant.transform.position, player.transform.position)
