@@ -51,6 +51,7 @@ public class PlantManager : MonoBehaviour
     // Spawn seed, in location of player crosshair (randomised, to distance of radius)
 
     //TODO: Check distance between plant and crosshair
+    // Or should i use a collider/trigger
     public void CheckDistanceToCrosshair()
     {
         // Vector3.Distance(plant.transform.position, player.transform.position)

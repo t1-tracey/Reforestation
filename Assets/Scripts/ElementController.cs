@@ -35,10 +35,32 @@ public class ElementController : MonoBehaviour
         // Vector3.Distance(plant.transform.position, player.transform.position)
     }
 
-    public void SwitchElement()
+    public void SetSelectedElement(Element newElement)
     {
-
+        selectedElement = newElement;
     }
+
+    public bool IsSelectedElementRain()
+    {
+        if (selectedElement == Element.Rain)
+            return true;
+        return false;
+    }
+
+    public bool IsSelectedElementSunlight()
+    {
+        if (selectedElement == Element.Sunlight)
+            return true;
+        return false;
+    }
+
+    public bool IsSelectedElementTime()
+    {
+        if (selectedElement == Element.Time)
+            return true;
+        return false;
+    }
+
 }
 
 public enum Element
