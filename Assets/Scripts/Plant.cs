@@ -14,7 +14,8 @@ public class Plant : MonoBehaviour
     public bool isWatered;
     public bool hasReceivedSunlight;
 
-    // public mesh
+    //
+
 
     // Start is called before the first frame update
     void Start()
@@ -249,12 +250,6 @@ public class Plant : MonoBehaviour
         //TODO: set mesh / prefab
     }
 
-    //TODO: Check distance between plant and crosshair
-    public void CheckDistanceToCrosshair()
-    {
-        // Vector3.Distance(plant.transform.position, player.transform.position)
-    }
-
     // Called when water is used on plant
     public void GiveWater()
     {
@@ -314,6 +309,29 @@ public class Plant : MonoBehaviour
     public void DestroyPlant()
     {
         Destroy(this.gameObject);
+    }
+
+    // Connect internal element messages to element controller
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "ElementController")
+        {
+            if (other.gameObject.GetComponent<ElementController>().IsSelectedElementRain())
+            {
+                GiveWater();
+            }
+
+            if (other.gameObject.GetComponent<ElementController>().IsSelectedElementSunlight())
+            {
+                GiveSunlight();
+            }
+
+            if (other.gameObject.GetComponent<ElementController>().IsSelectedElementTime())
+            {
+                SpeedUpTime();
+            }
+
+        }
     }
 
 

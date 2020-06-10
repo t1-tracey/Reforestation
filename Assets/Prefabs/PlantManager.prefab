@@ -43,9 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6b91278b7be428ca5715e5c5cba376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: {fileID: 0}
-  sapling: {fileID: 0}
-  smallTree: {fileID: 0}
-  bigTree: {fileID: 0}
-  treeLog: {fileID: 0}
-  treeDead: {fileID: 0}
+  seed: {fileID: 3583722685038683287, guid: 253ce745b7baf47c6b64b416adce6a09, type: 3}
+  sapling: {fileID: 8954391828836467234, guid: daab0fcd36eea438ea3cc6b010b9fb7c, type: 3}
+  smallTree: {fileID: 837141338281418412, guid: 054893cf1aa894b6d8d76e1045f50bd8,
+    type: 3}
+  bigTree: {fileID: 357128955530984825, guid: 72610d75799a74cd694a9a46e280bb64, type: 3}
+  treeLog: {fileID: 1450302001878765807, guid: 51916e4ba88334f7694f0ed78eb0ec15, type: 3}
+  treeDead: {fileID: 1225334264292454392, guid: 235132bde3580420582c2d2ee2561c5b,
+    type: 3}

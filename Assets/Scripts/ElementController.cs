@@ -6,6 +6,7 @@ public class ElementController : MonoBehaviour
 {
 
     public Element selectedElement;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -28,12 +29,6 @@ public class ElementController : MonoBehaviour
     // React when button is pushed while time speed is selected
     // Send timeSpeed message to plants
     // React when UI summoning time speed is selected
-
-    //TODO: Check distance between plant and crosshair
-    public void CheckDistanceToCrosshair()
-    {
-        // Vector3.Distance(plant.transform.position, player.transform.position)
-    }
 
     public void SetSelectedElement(Element newElement)
     {
