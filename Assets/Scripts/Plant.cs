@@ -316,20 +316,27 @@ public class Plant : MonoBehaviour
     {
         if (other.tag == "ElementController")
         {
-            if (other.gameObject.GetComponent<ElementController>().IsSelectedElementRain())
-            {
-                GiveWater();
-            }
+            //TODO: CHECK IF ACTION IS BEING PRESSED / ACTIVATED
 
-            if (other.gameObject.GetComponent<ElementController>().IsSelectedElementSunlight())
+            /*if (false)
             {
-                GiveSunlight();
-            }
+                if (other.gameObject.GetComponent<ElementController>().IsSelectedElementRain())
+                {
+                    GiveWater();
+                }
 
-            if (other.gameObject.GetComponent<ElementController>().IsSelectedElementTime())
-            {
-                SpeedUpTime();
-            }
+                if (other.gameObject.GetComponent<ElementController>().IsSelectedElementSunlight())
+                {
+                    GiveSunlight();
+                }
+
+                if (other.gameObject.GetComponent<ElementController>().IsSelectedElementTime())
+                {
+                    SpeedUpTime();
+                }
+
+            }*/
+
 
         }
     }
