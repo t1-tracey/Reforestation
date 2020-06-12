@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ElementController
+  - Plant
   layers:
   - Default
   - TransparentFX

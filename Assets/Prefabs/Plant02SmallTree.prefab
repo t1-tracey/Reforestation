@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1414914853975173744}
   - component: {fileID: -6445097328770860954}
   m_Layer: 0
-  m_Name: Plant02LittleTree
-  m_TagString: Untagged
+  m_Name: Plant02SmallTree
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
