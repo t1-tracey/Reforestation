@@ -916,6 +916,11 @@ PrefabInstance:
       propertyPath: spawnHeight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2850237215940645333, guid: 60cf0fd818e3c47faad3c666ea8f90a7,
+        type: 3}
+      propertyPath: timeBetweenPlantSpawn
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2850237217030202793, guid: 60cf0fd818e3c47faad3c666ea8f90a7,
         type: 3}
       propertyPath: m_LocalPosition.x
