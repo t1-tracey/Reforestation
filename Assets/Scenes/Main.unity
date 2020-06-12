@@ -922,7 +922,10 @@ MonoBehaviour:
     Left stick to move, A to plant trees
 
     X for rain,
-    Y for sunlight, B for time speed'
+    Y for sunlight, B for time speed
+
+    After using rain and sunlight on a plant,
+    it will grow after you use time speed'
 --- !u!222 &903945217
 CanvasRenderer:
   m_ObjectHideFlags: 0
