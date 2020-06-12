@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         RotatePlayer();
+        CheckActionButton();
     }
 
 
@@ -82,4 +83,12 @@ public class PlayerController : MonoBehaviour
     }
 
     // 
+
+    private void CheckActionButton()
+    {
+        if (XCI.GetButton(XboxButton.A))
+        {
+
+        }
+    }
 }
