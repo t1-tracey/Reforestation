@@ -36,7 +36,7 @@ public class PlantManager : MonoBehaviour
     {
 
 
-
+        SpawnPlant();
     }
 
     public void ChangePlantStage(Plant oldPlant, PlantStage newPlantStage, bool canRespondToWater, bool canRespondToSunlight, bool canRespondToTime)
@@ -74,10 +74,8 @@ public class PlantManager : MonoBehaviour
             {
                 Vector3 spawnPosition = ChooseRandomSpawnLocation();
 
-                Plant plant = new Plant();
-                plant.SetPlantStageToBigTree();
-
-                Instantiate(plant, spawnPosition, Quaternion.identity);
+                GameObject GO = Instantiate(bigTree, spawnPosition, Quaternion.identity) as GameObject;
+                GO.GetComponent<Plant>().SetPlantStageToBigTree();
 
                 canSpawn = false;
 
