@@ -116,6 +116,12 @@ public class PlantManager : MonoBehaviour
             vertical *= -1;
         }
 
+        // make horizontal component randomly +-
+        if (Random.Range(0, 2) == 1)
+        {
+            horizontal *= -1;
+        }
+
 
         spawnDisplacement = new Vector3(horizontal, 0, vertical);
         // spawnDisplacement = Random.insideUnitSphere * radius;
