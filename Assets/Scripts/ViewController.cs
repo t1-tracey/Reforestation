@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 
 public class ViewController : MonoBehaviour
 {
@@ -14,5 +15,13 @@ public class ViewController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void MoveSelectionForElement()
+    {
+        if (XCI.GetButtonDown(XboxButton.DPadLeft))
+        {
+
+        }
     }
 }

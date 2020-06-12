@@ -286,15 +286,22 @@ public class Plant : MonoBehaviour
         {
             if (IsPlantSeed())
             {
+
                 SetPlantStageToSapling();
+
+                DestroyPlant();
             }
             else if (IsPlantSapling())
             {
                 SetPlantStageToSmallTree();
+
+                DestroyPlant();
             }
             else if (IsPlantSmallTree())
             {
                 SetPlantStageToBigTree();
+
+                DestroyPlant();
             }
             else if (IsTreeLog() || IsTreeStump())
             {

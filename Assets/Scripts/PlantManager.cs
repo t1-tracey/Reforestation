@@ -39,27 +39,36 @@ public class PlantManager : MonoBehaviour
         SpawnPlant();
     }
 
-    public void ChangePlantStage(Plant oldPlant, PlantStage newPlantStage, bool canRespondToWater, bool canRespondToSunlight, bool canRespondToTime)
+    public void ChangePlantStage(GameObject oldPlant)
     {
 
-        Plant plant = new Plant();
 
         // place new plant in position of old plant, quaternion.identity
-        plant.transform.position = oldPlant.transform.position;
+        Vector3 spawnPosition = oldPlant.transform.position;
 
-        oldPlant.gameObject.SetActive(false);
-        Instantiate(plant, oldPlant.transform.position, Quaternion.identity);
-
-        // Instanstiate
-        // Disable old plant
-
-        plant.SetPlantStage(newPlantStage);
-
-        plant.SetCanRespondToWater(canRespondToWater);
-        plant.SetCanRespondToSunlight(canRespondToSunlight);
-        plant.SetCanRespondToTime(canRespondToTime);
-
-        oldPlant.DestroyPlant();
+        if (oldPlant.GetComponent<Plant>().IsPlantSeed())
+        {
+            GameObject GO = Instantiate(sapling, spawnPosition, Quaternion.identity) as GameObject;
+            GO.GetComponent<Plant>().SetPlantStageToSapling();
+            oldPlant.GetComponent<Plant>().DestroyPlant();
+        }
+        else if (oldPlant.GetComponent<Plant>().IsPlantSapling())
+        {
+            GameObject GO = Instantiate(smallTree, spawnPosition, Quaternion.identity) as GameObject;
+            GO.GetComponent<Plant>().SetPlantStageToSmallTree();
+            oldPlant.GetComponent<Plant>().DestroyPlant();
+        }
+        else if (oldPlant.GetComponent<Plant>().IsPlantSmallTree())
+        {
+            GameObject GO = Instantiate(bigTree, spawnPosition, Quaternion.identity) as GameObject;
+            GO.GetComponent<Plant>().SetPlantStageToBigTree();
+            oldPlant.GetComponent<Plant>().DestroyPlant();
+        }
+        else if (oldPlant.GetComponent<Plant>().IsTreeLog() || oldPlant.GetComponent<Plant>().IsTreeStump())
+        {
+            oldPlant.GetComponent<Plant>().DestroyPlant();
+        }
+        
     }
 
     public void SpawnPlant()
@@ -74,8 +83,8 @@ public class PlantManager : MonoBehaviour
             {
                 Vector3 spawnPosition = ChooseRandomSpawnLocation();
 
-                GameObject GO = Instantiate(bigTree, spawnPosition, Quaternion.identity) as GameObject;
-                GO.GetComponent<Plant>().SetPlantStageToBigTree();
+                GameObject GO = Instantiate(seed, spawnPosition, Quaternion.identity) as GameObject;
+                GO.GetComponent<Plant>().SetPlantStageToSeed();
 
                 canSpawn = false;
 
@@ -88,7 +97,7 @@ public class PlantManager : MonoBehaviour
 
     }
 
-    // Deprecated in favour of Random.insideUnitSphere
+    // Maybe deprecate in favour of Random.insideUnitSphere
     public Vector3 ChooseRandomSpawnLocation()
     {
         //Pick random location within radius for the seed to spawn
