@@ -46,13 +46,15 @@ public class PlantManager : MonoBehaviour
         // place new plant in position of old plant, quaternion.identity
         Vector3 spawnPosition = oldPlant.transform.position;
 
-        if (oldPlant.GetComponent<Plant>().IsPlantSeed())
+        /*if (oldPlant.GetComponent<Plant>().IsPlantSeed())
         {
             GameObject GO = Instantiate(sapling, spawnPosition, Quaternion.identity) as GameObject;
             GO.GetComponent<Plant>().SetPlantStageToSapling();
             oldPlant.GetComponent<Plant>().DestroyPlant();
         }
-        else if (oldPlant.GetComponent<Plant>().IsPlantSapling())
+        else */
+
+        if (oldPlant.GetComponent<Plant>().IsPlantSapling())
         {
             GameObject GO = Instantiate(smallTree, spawnPosition, Quaternion.identity) as GameObject;
             GO.GetComponent<Plant>().SetPlantStageToSmallTree();
@@ -83,8 +85,8 @@ public class PlantManager : MonoBehaviour
             {
                 Vector3 spawnPosition = ChooseRandomSpawnLocation();
 
-                GameObject GO = Instantiate(seed, spawnPosition, Quaternion.identity) as GameObject;
-                GO.GetComponent<Plant>().SetPlantStageToSeed();
+                GameObject GO = Instantiate(sapling, spawnPosition, Quaternion.identity) as GameObject;
+                GO.GetComponent<Plant>().SetPlantStageToSapling();
 
                 canSpawn = false;
 
