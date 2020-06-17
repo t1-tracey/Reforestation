@@ -65,6 +65,11 @@ public class PlayerController : MonoBehaviour
             rigidBody.velocity = rigidBody.velocity.normalized * maxSpeed;
         }
 
+        if (movement.magnitude < 0.1f)
+        {
+            rigidBody.velocity = Vector3.zero;
+        }
+
 
     }
 
