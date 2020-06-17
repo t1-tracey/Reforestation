@@ -28,7 +28,7 @@ public class ViewController : MonoBehaviour
 
     void ResetScene()
     {
-        if (XCI.GetButtonDown(XboxButton.Start))
+        if (XCI.GetButtonDown(XboxButton.DPadUp))
         {
             SceneManager.LoadScene(0);
         }
