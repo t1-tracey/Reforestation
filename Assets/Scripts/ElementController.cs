@@ -12,7 +12,7 @@ public class ElementController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        selectedElement = Element.None;
+        selectedElement = Element.Seed;
     }
 
     // Update is called once per frame
