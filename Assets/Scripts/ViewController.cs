@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
+using UnityEngine.SceneManagement;
 
 public class ViewController : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class ViewController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ResetScene();
     }
 
     void MoveSelectionForElement()
@@ -22,6 +23,14 @@ public class ViewController : MonoBehaviour
         if (XCI.GetButtonDown(XboxButton.DPadLeft))
         {
 
+        }
+    }
+
+    void ResetScene()
+    {
+        if (XCI.GetButtonDown(XboxButton.Start))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }
