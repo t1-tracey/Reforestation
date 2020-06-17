@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
         {
             if (XCI.GetButton(XboxButton.X))
             {
-                Debug.Log("X pressed");
+                // Debug.Log("X pressed");
                 // Check selected element controller
                 other.GetComponent<Plant>().GiveWater();
             }

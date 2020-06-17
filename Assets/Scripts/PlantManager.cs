@@ -79,7 +79,7 @@ public class PlantManager : MonoBehaviour
 
         if (XCI.GetButton(XboxButton.A))
         {
-            Debug.Log("A is pressed");
+            //Debug.Log("A is pressed");
 
             if (canSpawn == true)
             {
