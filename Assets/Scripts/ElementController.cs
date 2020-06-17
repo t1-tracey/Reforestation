@@ -9,6 +9,9 @@ public class ElementController : MonoBehaviour
     public Element selectedElement;
     public GameObject player;
 
+    public GameObject cloud;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,14 @@ public class ElementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (IsSelectedElementRain())
+        {
+            cloud.SetActive(true);
+        }
+        else
+        {
+            cloud.SetActive(false);
+        }
     }
 
     // React when button is pushed while rain is selected
