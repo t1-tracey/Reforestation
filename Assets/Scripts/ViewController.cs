@@ -30,7 +30,7 @@ public class ViewController : MonoBehaviour
     {
         if (XCI.GetButtonDown(XboxButton.Start))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
