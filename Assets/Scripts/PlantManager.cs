@@ -23,6 +23,8 @@ public class PlantManager : MonoBehaviour
 
     public float spawnHeight = 0.0f;
 
+    public ElementController elementController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +37,19 @@ public class PlantManager : MonoBehaviour
     void Update()
     {
 
+        if (XCI.GetButtonDown(XboxButton.A))
+        {
+            elementController.SetSelectedElement(Element.Seed);
+        }
 
-        SpawnPlant();
+        if (XCI.GetAxis(XboxAxis.RightTrigger) > 0.1f)
+        {
+            if (elementController.IsSelectedElementSeed())
+            {
+                SpawnPlant();
+            }
+            
+        }
     }
 
     public void ChangePlantStage(GameObject oldPlant)
@@ -76,25 +89,20 @@ public class PlantManager : MonoBehaviour
     public void SpawnPlant()
     {
 
+        //Debug.Log("A is pressed");
 
-        if (XCI.GetButton(XboxButton.A))
+        if (canSpawn == true)
         {
-            //Debug.Log("A is pressed");
+            Vector3 spawnPosition = ChooseRandomSpawnLocation();
 
-            if (canSpawn == true)
-            {
-                Vector3 spawnPosition = ChooseRandomSpawnLocation();
+            GameObject GO = Instantiate(sapling, spawnPosition, Quaternion.identity) as GameObject;
+            GO.GetComponent<Plant>().SetPlantStageToSapling();
 
-                GameObject GO = Instantiate(sapling, spawnPosition, Quaternion.identity) as GameObject;
-                GO.GetComponent<Plant>().SetPlantStageToSapling();
+            canSpawn = false;
 
-                canSpawn = false;
-
-                Invoke("ResetSpawnTime", timeBetweenPlantSpawn);
-            }
-
-
+            Invoke("ResetSpawnTime", timeBetweenPlantSpawn);
         }
+
 
 
     }

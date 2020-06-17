@@ -12,7 +12,7 @@ public class ElementController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        selectedElement = Element.None;
     }
 
     // Update is called once per frame
@@ -57,12 +57,20 @@ public class ElementController : MonoBehaviour
         return false;
     }
 
+    public bool IsSelectedElementSeed()
+    {
+        if (selectedElement == Element.Seed)
+            return true;
+        return false;
+    }
 
 }
 
 public enum Element
 {
+    Seed,
     Rain,
     Sunlight,
-    Time
+    Time,
+    None
 }

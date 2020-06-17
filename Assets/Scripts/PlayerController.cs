@@ -99,47 +99,59 @@ public class PlayerController : MonoBehaviour
 
     private void CheckActionButton()
     {
-        if (XCI.GetButton(XboxButton.X))
+        if (XCI.GetButtonDown(XboxButton.X))
         {
-
+            elementController.SetSelectedElement(Element.Rain);
         }
 
-        if (XCI.GetButton(XboxButton.Y))
+        if (XCI.GetButtonDown(XboxButton.Y))
         {
-
+            elementController.SetSelectedElement(Element.Sunlight);
         }
 
-        if (XCI.GetButton(XboxButton.B))
+        if (XCI.GetButtonDown(XboxButton.B))
         {
-
+            elementController.SetSelectedElement(Element.Time);
         }
+
+
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Plant")
         {
-            if (XCI.GetButton(XboxButton.X))
-            {
-                // Debug.Log("X pressed");
-                // Check selected element controller
-                other.GetComponent<Plant>().GiveWater();
-            }
-            if (XCI.GetButton(XboxButton.Y))
-            {
-                // Check selected element controller
-                other.GetComponent<Plant>().GiveSunlight();
-            }
-            if (XCI.GetButton(XboxButton.B))
-            {
-                // Check selected element controller
 
-                if (other.GetComponent<Plant>().GetCanRespondToTime())
+            if (XCI.GetAxis(XboxAxis.RightTrigger) > 0.1f)
+            {
+                if (elementController.IsSelectedElementRain())
                 {
-                    plantManager.ChangePlantStage(other.gameObject);
+                    // Debug.Log("X pressed");
+                    // Check selected element controller
+
+                    other.GetComponent<Plant>().GiveWater();
                 }
-                
+                if (elementController.IsSelectedElementSunlight())
+                {
+                    // Check selected element controller
+
+                    other.GetComponent<Plant>().GiveSunlight();
+                }
+                if (elementController.IsSelectedElementTime())
+                {
+                    // Check selected element controller
+
+                    if (other.GetComponent<Plant>().GetCanRespondToTime())
+                    {
+                        plantManager.ChangePlantStage(other.gameObject);
+                    }
+
+                }
             }
+
+            
+
+
         }
     }
 
