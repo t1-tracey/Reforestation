@@ -10,6 +10,7 @@ public class ElementController : MonoBehaviour
     public GameObject player;
 
     public GameObject cloud;
+    public GameObject sunlight;
 
 
     // Start is called before the first frame update
@@ -28,6 +29,15 @@ public class ElementController : MonoBehaviour
         else
         {
             cloud.SetActive(false);
+        }
+
+        if (IsSelectedElementSunlight())
+        {
+            sunlight.SetActive(true);
+        }
+        else
+        {
+            sunlight.SetActive(false);
         }
     }
 
