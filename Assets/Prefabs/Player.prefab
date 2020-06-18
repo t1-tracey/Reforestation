@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409456854}
-  m_LocalRotation: {x: -0.092296004, y: 0.7010574, z: -0.7010574, w: 0.092296004}
+  m_LocalRotation: {x: 0, y: 0.70710677, z: -0.70710677, w: 0}
   m_LocalPosition: {x: 1, y: -1, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1482056174}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -255, y: -90, z: 90}
+  m_LocalEulerAnglesHint: {x: -270, y: -90, z: 90}
 --- !u!198 &409456856
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -660,7 +660,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 31.26
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -746,7 +746,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 4.04
       mode: 0
       spread: 0
       speed:
@@ -4709,7 +4709,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d40c6d123e85afe4dbc6d7dafe08d352, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4779,13 +4779,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639988186}
-  m_LocalRotation: {x: -0.13052627, y: -0, z: -0.9914449, w: 0}
+  m_LocalRotation: {x: -0, y: 0, z: -1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 1.5000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1045083058489255741}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -255, y: -90, z: 90}
+  m_LocalEulerAnglesHint: {x: -180, y: -180, z: 0}
 --- !u!198 &639988189
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5414,7 +5414,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 54.3
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -9463,7 +9463,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f933029f0f0292e41bca403ca558139a, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -10852,12 +10852,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 164be5b26a76544a49974f0d5de28dac, type: 3}
---- !u!4 &2850237215940645334 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7452413447945654590, guid: 164be5b26a76544a49974f0d5de28dac,
-    type: 3}
-  m_PrefabInstance: {fileID: 4675397418636312808}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2850237215940645333 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7452413447945654589, guid: 164be5b26a76544a49974f0d5de28dac,
@@ -10870,6 +10864,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6b91278b7be428ca5715e5c5cba376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2850237215940645334 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7452413447945654590, guid: 164be5b26a76544a49974f0d5de28dac,
+    type: 3}
+  m_PrefabInstance: {fileID: 4675397418636312808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6342145217728922440
 PrefabInstance:
   m_ObjectHideFlags: 0
