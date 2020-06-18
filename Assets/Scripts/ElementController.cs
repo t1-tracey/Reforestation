@@ -11,6 +11,7 @@ public class ElementController : MonoBehaviour
 
     public GameObject cloud;
     public GameObject sunlight;
+    public GameObject hourglass;
 
 
     // Start is called before the first frame update
@@ -22,6 +23,16 @@ public class ElementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        HideOrShowRain();
+        HideOrShowSunlight();
+        HideOrShowTime();
+
+    }
+
+    // Hide or show cloud above player
+    public void HideOrShowRain()
+    {
         if (IsSelectedElementRain())
         {
             cloud.SetActive(true);
@@ -31,6 +42,11 @@ public class ElementController : MonoBehaviour
             cloud.SetActive(false);
         }
 
+    }
+
+    // Hide or show sunlight above player
+    public void HideOrShowSunlight()
+    {
         if (IsSelectedElementSunlight())
         {
             sunlight.SetActive(true);
@@ -38,6 +54,19 @@ public class ElementController : MonoBehaviour
         else
         {
             sunlight.SetActive(false);
+        }
+    }
+
+    // Hide or show hourglass/time object above player
+    public void HideOrShowTime()
+    {
+        if (IsSelectedElementTime())
+        {
+            hourglass.SetActive(true);
+        }
+        else
+        {
+            hourglass.SetActive(false);
         }
     }
 
@@ -51,6 +80,7 @@ public class ElementController : MonoBehaviour
     // Send timeSpeed message to plants
     // React when UI summoning time speed is selected
 
+    // Setters and getters
     public void SetSelectedElement(Element newElement)
     {
         selectedElement = newElement;

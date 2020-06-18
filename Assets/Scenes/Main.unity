@@ -1469,7 +1469,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5044
+  m_Name: pb_Mesh-1376
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3708,26 +3708,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1128469870}
-    - target: {fileID: 28594527058506204, guid: 60cf0fd818e3c47faad3c666ea8f90a7,
-        type: 3}
-      propertyPath: m_Range
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 28594527058506204, guid: 60cf0fd818e3c47faad3c666ea8f90a7,
-        type: 3}
-      propertyPath: m_SpotAngle
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1045083058489255741, guid: 60cf0fd818e3c47faad3c666ea8f90a7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2850237216215336732, guid: 60cf0fd818e3c47faad3c666ea8f90a7,
-        type: 3}
-      propertyPath: sunlight
-      value: 
-      objectReference: {fileID: 2850237217350160433}
     - target: {fileID: 2850237217030202793, guid: 60cf0fd818e3c47faad3c666ea8f90a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3793,12 +3773,6 @@ PrefabInstance:
 --- !u!4 &2850237217350160432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2850237217030202793, guid: 60cf0fd818e3c47faad3c666ea8f90a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 2850237217350160431}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2850237217350160433 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9136115720497792612, guid: 60cf0fd818e3c47faad3c666ea8f90a7,
     type: 3}
   m_PrefabInstance: {fileID: 2850237217350160431}
   m_PrefabAsset: {fileID: 0}
