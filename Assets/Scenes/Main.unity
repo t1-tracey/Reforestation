@@ -3714,7 +3714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409456856, guid: 60cf0fd818e3c47faad3c666ea8f90a7, type: 3}
       propertyPath: ShapeModule.radiusThickness
-      value: 1.0000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1482056173, guid: 60cf0fd818e3c47faad3c666ea8f90a7, type: 3}
       propertyPath: m_Mesh
