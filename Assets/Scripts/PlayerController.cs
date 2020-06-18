@@ -130,6 +130,7 @@ public class PlayerController : MonoBehaviour
                     // Check selected element controller
 
                     other.GetComponent<Plant>().GiveWater();
+                    elementController.EnableRain();
                 }
                 if (elementController.IsSelectedElementSunlight())
                 {
@@ -148,8 +149,12 @@ public class PlayerController : MonoBehaviour
 
                 }
             }
+            else
+            {
+                elementController.DisableRain();
+            }
 
-            
+
 
 
         }

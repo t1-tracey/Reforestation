@@ -13,11 +13,14 @@ public class ElementController : MonoBehaviour
     public GameObject sunlight;
     public GameObject hourglass;
 
+    public GameObject rainParticleSystem;
+
 
     // Start is called before the first frame update
     void Start()
     {
         selectedElement = Element.Seed;
+        DisableRain();
     }
 
     // Update is called once per frame
@@ -68,6 +71,16 @@ public class ElementController : MonoBehaviour
         {
             hourglass.SetActive(false);
         }
+    }
+
+    public void EnableRain()
+    {
+        rainParticleSystem.SetActive(true);
+    }
+
+    public void DisableRain()
+    {
+        rainParticleSystem.SetActive(false);
     }
 
     // React when button is pushed while rain is selected
