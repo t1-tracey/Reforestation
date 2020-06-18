@@ -15,9 +15,10 @@ public class ViewController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ResetScene();
+        CheckResetScene();
     }
 
+    /*
     void MoveSelectionForElement()
     {
         if (XCI.GetButtonDown(XboxButton.DPadLeft))
@@ -25,8 +26,9 @@ public class ViewController : MonoBehaviour
 
         }
     }
+    */
 
-    void ResetScene()
+    void CheckResetScene()
     {
         if (XCI.GetButtonDown(XboxButton.Start))
         {

@@ -130,13 +130,22 @@ public class PlayerController : MonoBehaviour
                     // Check selected element controller
 
                     other.GetComponent<Plant>().GiveWater();
-                    elementController.EnableRain();
+
+                    // Particle effects
+                    elementController.DisableSunlightParticles();
+                    elementController.EnableRainParticles();
+
                 }
                 if (elementController.IsSelectedElementSunlight())
                 {
                     // Check selected element controller
 
                     other.GetComponent<Plant>().GiveSunlight();
+
+                    // Particle effects
+                    elementController.DisableRainParticles();
+                    elementController.EnableSunlightParticles();
+
                 }
                 if (elementController.IsSelectedElementTime())
                 {
@@ -151,7 +160,8 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                elementController.DisableRain();
+                elementController.DisableRainParticles();
+                elementController.DisableSunlightParticles();
             }
 
 
