@@ -67,7 +67,7 @@ public class ElementController : MonoBehaviour
     {
         if (IsSelectedElementTime())
         {
-            hourglass.SetActive(true);
+            // hourglass.SetActive(true);
         }
         else
         {
@@ -97,7 +97,7 @@ public class ElementController : MonoBehaviour
 
     public void EnableTimeParticles()
     {
-        timeParticleSystem.SetActive(true);
+        //timeParticleSystem.SetActive(true);
     }
 
     public void DisableTimeParticles()
