@@ -15,13 +15,12 @@ public class ElementController : MonoBehaviour
 
     public GameObject rainParticleSystem;
     public GameObject sunlightParticleSystem;
-
+    public GameObject timeParticleSystem;
 
     // Start is called before the first frame update
     void Start()
     {
         selectedElement = Element.Seed;
-        DisableRainParticles();
     }
 
     // Update is called once per frame
@@ -96,6 +95,17 @@ public class ElementController : MonoBehaviour
         sunlightParticleSystem.SetActive(false);
     }
 
+    public void EnableTimeParticles()
+    {
+        timeParticleSystem.SetActive(true);
+    }
+
+    public void DisableTimeParticles()
+    {
+        timeParticleSystem.SetActive(false);
+    }
+
+    // Display particle effects depending on selected element
     public void DisplayParticles()
     {
         if (XCI.GetAxis(XboxAxis.RightTrigger) > 0.1f)
@@ -103,29 +113,36 @@ public class ElementController : MonoBehaviour
             if (IsSelectedElementRain())
             {
 
-                // Particle effects
-                DisableSunlightParticles();
                 EnableRainParticles();
 
             }
+            else
+            {
+                DisableRainParticles();
+            }
             if (IsSelectedElementSunlight())
             {
-
-
-                // Particle effects
-                DisableRainParticles();
                 EnableSunlightParticles();
 
             }
+            else
+            {
+                DisableSunlightParticles();
+            }
             if (IsSelectedElementTime())
             {
-
+                EnableTimeParticles();
+            }
+            else
+            {
+                DisableTimeParticles();
             }
         }
         else
         {
             DisableRainParticles();
             DisableSunlightParticles();
+            DisableTimeParticles();
         }
     }
 
