@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using XboxCtrlrInput;
 
 public class ElementController : MonoBehaviour
 {
@@ -31,6 +31,8 @@ public class ElementController : MonoBehaviour
         HideOrShowRain();
         HideOrShowSunlight();
         HideOrShowTime();
+
+        DisplayParticles();
 
     }
 
@@ -92,6 +94,39 @@ public class ElementController : MonoBehaviour
     public void DisableSunlightParticles()
     {
         sunlightParticleSystem.SetActive(false);
+    }
+
+    public void DisplayParticles()
+    {
+        if (XCI.GetAxis(XboxAxis.RightTrigger) > 0.1f)
+        {
+            if (IsSelectedElementRain())
+            {
+
+                // Particle effects
+                DisableSunlightParticles();
+                EnableRainParticles();
+
+            }
+            if (IsSelectedElementSunlight())
+            {
+
+
+                // Particle effects
+                DisableRainParticles();
+                EnableSunlightParticles();
+
+            }
+            if (IsSelectedElementTime())
+            {
+
+            }
+        }
+        else
+        {
+            DisableRainParticles();
+            DisableSunlightParticles();
+        }
     }
 
     // React when button is pushed while rain is selected
